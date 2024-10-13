@@ -15,16 +15,19 @@
         }
 
         .array{
-            font-size: 50px;
+            font-size: 40px;
             font-weight:400;
-            padding-top: 10px;
-            padding-bottom: 10spx;
+            padding-top: 15px;
+            padding-bottom: 10px;
         }
         .array1{
             background-color: red;
         }
         .array2{
             background-color: blue;
+        }
+        span{
+            font-weight: bold;
         }
 
     </style>
@@ -118,7 +121,7 @@
         <span class="array2 array"><?= drawPlayerArray($player2Array) ?></span>
          <?= $player2Score ?> puntos
     </div>
-    <p>Resultado: <?= $winnerMessageArray[winnerMessage($winnerMessageArray,$player1Score,$player2Score)] ?></p>
+    <p><span>Resultado:</span> <?= $winnerMessageArray[winnerMessage($winnerMessageArray,$player1Score,$player2Score)] ?></p>
 
 
 </body>
