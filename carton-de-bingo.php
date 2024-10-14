@@ -145,8 +145,9 @@ function representarCarton($array)
 
 $correctoFilas = false;
 $correctoColumnas = false;
-while (!$correctoFilas && !$correctoColumnas) { //Comprobar que el carton generado es correcto y si no generar otro hasta que lo sea
 
+while (!$correctoFilas || !$correctoColumnas) { //Comprobar que el carton generado es correcto y si no generar otro hasta que lo sea
+                                                
     $array = generarArray();
     $array = ordenarColumnasArray($array);
     $array = vaciarArray($array);
@@ -168,27 +169,28 @@ while (!$correctoFilas && !$correctoColumnas) { //Comprobar que el carton genera
         }
     }
 
-    if ($columnasCorrectas == 9) {
+    if ($columnasCorrectas == COLUMNAS) {
         $correctoColumnas = true;
+    }else{
+        $correctoColumnas = false;
     }
 
-    $filasCorrectas = 0;                //Comprobando filas
+    $filasCorrectas = 0;              //Comprobando filas
     for ($i = 0; $i < FILAS; $i++) {
         $elementosVacios = 0;
         for ($j = 0; $j < COLUMNAS; $j++) {
-            if ($array[$i][$j] === "") {
+            if ($array[$i][$j] == "") {
                 $elementosVacios++;
             }
         }
         if ($elementosVacios == 4) {
             $filasCorrectas++;
-        } else {
-            $filasCorrectas = 0;
-            break;
         }
     }
-    if ($filasCorrectas == 3) {
+    if ($filasCorrectas == FILAS) {
         $correctoFilas = true;
+    } else{
+        $correctoFilas = false;
     }
 }
 
