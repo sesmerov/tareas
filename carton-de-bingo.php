@@ -22,33 +22,29 @@ const COLUMNAS = 9;
 function generarArray(): array
 {
 
-    $array = array(
-        array(),
-        array(),
-        array()
-    );
+    $array = [[],[],[]];
     $numerosIncluidos = [];
 
     for ($i = 0; $i < FILAS; $i++) {
         for ($j = 0; $j < COLUMNAS; $j++) {
 
-            if ($j % 10 == 0) {
+            if ($j == 0) {
                 $array[$i][$j] = rand(1, 9);
-            } else if ($j % 10 == 1) {
+            } else if ($j == 1) {
                 $array[$i][$j] = rand(10, 19);
-            } else if ($j % 10 == 2) {
+            } else if ($j == 2) {
                 $array[$i][$j] = rand(20, 29);
-            } else if ($j % 10 == 3) {
+            } else if ($j == 3) {
                 $array[$i][$j] = rand(30, 39);
-            } else if ($j % 10 == 4) {
+            } else if ($j == 4) {
                 $array[$i][$j] = rand(40, 49);
-            } else if ($j % 10 == 5) {
+            } else if ($j == 5) {
                 $array[$i][$j] = rand(50, 59);
-            } else if ($j % 10 == 6) {
+            } else if ($j == 6) {
                 $array[$i][$j] = rand(60, 69);
-            } else if ($j % 10 == 7) {
+            } else if ($j == 7) {
                 $array[$i][$j] = rand(70, 79);
-            } else if ($j % 10 == 8) {
+            } else{
                 $array[$i][$j] = rand(80, 90);
             }
 
@@ -62,7 +58,7 @@ function generarArray(): array
     return $array;
 }
 
-function ordenarColumnasArray($array)
+function ordenarColumnasArray($array):array
 {
     for ($j = 0; $j < COLUMNAS; $j++) {
         $columna = array_column($array, $j); // Obtener la columna como un array
@@ -76,7 +72,7 @@ function ordenarColumnasArray($array)
     return $array;
 }
 
-function vaciarArray($array)
+function vaciarArray($array):array
 {
     $columnas = range(0, 8);
     shuffle($columnas);
