@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: gray;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+            background-color: white;
+            width: 80%;
+            margin: 0px auto;
+            padding: 2%;
+            border-radius: 10px;
+        }
+        input,label{
+            margin: 1%;
+        }
+        input[type="text"]{
+            width: 100%;
+        }
+        input[type="number"]{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Formulario Jugador</h1>
+    <form action="index.php" method="POST" enctype="multipart/form-data">
+        <label for="name">Nombre:</label> <br>
+        <input type="text" name="nombre"> <br>
+        <label for="alias">Alias:</label> <br>
+        <input type="text" name="alias"> <br>
+        <label for="alias">Edad:</label> <br>
+        <input type="number" name="edad"> <br>
+        <fieldset>
+            <legend>Armas a elegir (puedes elegir varias)</legend>
+            <input name="armas[]"  id="maza" value="Maza" type="checkbox" >
+            <label for="maza">Maza</label> <br>
+            <input name="armas[]" id="antorcha" value="Antorcha" type="checkbox" >
+            <label for="antorcha">Antorcha</label> <br>
+            <input name="armas[]" id="martillo" value="Martillo" type="checkbox" >
+            <label for="martillo">Martillo</label> <br>
+            <input name="armas[]" id="latigo" value="Latigo" type="checkbox" >
+            <label for="latigo">Latigo</label> <br>
+        </fieldset>
+        <fieldset>
+            <legend>¿Practica artes mágicas?</legend>
+            <input type="radio" name="magia" id="magia_si" value="si" >
+            <label for="magia_si">Sí</label>
+            <br>
+            <input type="radio" name="magia" id="magia_no" value="no" >
+            <label for="magia_no">No</label>
+        </fieldset>
+        <h3>Subir imagen:</h3>
+        <input type="file" name="fichero" id="formulario"> <br>
+        <input type="hidden" name="MAX_FILE_SIZE" value="10000" /> 
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+    </form>
+</body>
+</html>
