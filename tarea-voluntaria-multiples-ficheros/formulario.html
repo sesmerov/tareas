@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ed">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULARIO</title>
+
+    <style>
+        body{
+            background-color: grey;
+            text-align: center;
+        }
+
+        div{
+            width: 70%;
+            text-align: center;
+            margin: 0px auto;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 200px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div>
+        <br>
+        <form action="index.php" method="POST" enctype="multipart/form-data">
+            <h1>FORMULARIO DE ENVIO DE FICHEROS</h1>
+            <br>
+            <input type="file" name="ficheros[]" id="fichero" multiple accept=".jpg,.png">
+            <input type="hidden" name="MAX_FILE_SIZE" value="200000" />
+            <br>
+            <br>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpiar formulario">
+
+        </form>
+    </div>
+
+</body>
+</html>

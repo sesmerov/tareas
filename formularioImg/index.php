@@ -43,8 +43,6 @@ function getImage()
 }
 
 
-
-
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     include("captura.html");
 }
