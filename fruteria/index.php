@@ -45,7 +45,7 @@ if (isset($_POST["accion"]) && $_POST["accion"] == "Anotar") {
 
             $_SESSION["arrayCompra"][$_POST["fruta"]] += $cantidad;
 
-            if ($_SESSION["arrayCompra"][$_POST["fruta"]] <= 0) {
+            if ($_SESSION["arrayCompra"][$_POST["fruta"]] <= 0) { //Manera de eliminar frutas con valor 0 o negativo
                 unset($_SESSION["arrayCompra"][$_POST["fruta"]]);
             }
         }
